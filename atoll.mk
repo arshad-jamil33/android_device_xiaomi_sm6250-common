@@ -57,7 +57,7 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml
 
 # Camera
-$(call soong_config_set_bool,camera,override_format_from_reserved,true)
+$(call soong_config_set,camera,override_format_from_reserved,true)
 $(call soong_config_set,libcameraservice,ext_lib,//$(LOCAL_PATH):libcameraservice_extension.miatoll)
 
 TARGET_BUILD_DEVICE_AS_WEBCAM := true
@@ -66,7 +66,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64 \
 
-$(call soong_config_set_bool,camera,override_format_from_reserved,true)
+$(call soong_config_set,camera,override_format_from_reserved,true)
 
 # DebugFS
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
@@ -154,7 +154,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay-service.sdm
 
-$(call soong_config_set_bool,livedisplay_sdm,enable_dm,false)
+$(call soong_config_set,livedisplay_sdm,enable_dm,false)
 
 # Matlog
 TARGET_DISABLE_MATLOG := true
